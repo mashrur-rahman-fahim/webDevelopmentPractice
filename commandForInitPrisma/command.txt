@@ -1,3 +1,27 @@
 for prisma setup
 https://youtu.be/RebA5J-rlwg?si=Ij3uKGFGHttJro_f (postgresql)
 
+
+for prisma
+psql -U postgres
+
+
+CREATE USER test WITH PASSWORD test;
+CREATE DATABASE test;
+DROP DATABASE test;
+DROP USER test;
+
+Grant permission by go to {\c test}->(DATABASEname)
+GRANT USAGE ON SCHEMA public TO test;
+GRANT CREATE ON SCHEMA public TO test;
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO test;
+GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO test;
+
+Before dropping have to revoke all permission from user
+REVOKE USAGE ON SCHEMA public FROM test;
+REVOKE CREATE ON SCHEMA public FROM test;
+REVOKE ALL PRIVILEGES ON ALL TABLES IN SCHEMA public FROM test;
+REVOKE ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public FROM test;
+
+
+
